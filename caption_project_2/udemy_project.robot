@@ -60,10 +60,24 @@ TC1
     Wait Until Page Contains Element    xpath=(//android.widget.ImageView[@resource-id='com.udemy.android:id/course_image'])[1]
     Click Element    xpath=(//android.widget.ImageView[@resource-id='com.udemy.android:id/course_image'])[1]
 
+#   VALIDATION
+    Wait Until Page Contains Element    xpath=//android.widget.TextView[@resource-id='com.udemy.android:id/course_title']
     Element Should Contain Text    xpath=//android.widget.TextView[@resource-id='com.udemy.android:id/course_title']    Mastering Microcontroller and Embedded Driver Development
 
+    ${count}      Get Matching Xpath Count    xpath=//android.widget.Button[@text='Show more']
+    WHILE    ${count}==0
+          Swipe By Percent    90    75    90    25
+        ${count}      Get Matching Xpath Count    xpath=//android.widget.Button[@text='Show more']
+    END
+    Wait Until Page Contains Element    xpath=//android.widget.Button[@text='Show more']
+    Click Element    xpath=//android.widget.Button[@text='Show more']
 
-
-
+    ${count}      Get Matching Xpath Count    xpath=//android.widget.Button[@text='Show less']
+    WHILE    ${count}==0
+          Swipe By Percent    90    75    90    25
+        ${count}      Get Matching Xpath Count    xpath=//android.widget.Button[@text='Show less']
+    END
+    Wait Until Page Contains Element    xpath=//android.widget.Button[@text='Show less']
+    Click Element    xpath=//android.widget.Button[@text='Show less']
 
     [Teardown]     Close Application
