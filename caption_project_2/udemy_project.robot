@@ -57,12 +57,10 @@ TC1
     Wait Until Page Contains Element    xpath=//android.widget.TextView[@text='Embedded Systems']
     Click Element    xpath=//android.widget.TextView[@text='Embedded Systems']
 
-    WHILE    ${count}==0
-          Swipe By Percent    90    75    90    25
-        ${count}      Get Matching Xpath Count    xpath=//android.widget.TextView[@text='Other IT & Software']
-    END
-    Wait Until Page Contains Element    xpath=//android.widget.TextView[@text='Other IT & Software']
-    Click Element    xpath=//android.widget.TextView[@text='Other IT & Software']
+    Wait Until Page Contains Element    xpath=(//android.widget.ImageView[@resource-id='com.udemy.android:id/course_image'])[1]
+    Click Element    xpath=(//android.widget.ImageView[@resource-id='com.udemy.android:id/course_image'])[1]
+
+    Element Should Contain Text    xpath=//android.widget.TextView[@resource-id='com.udemy.android:id/course_title']    Mastering Microcontroller and Embedded Driver Development
 
 
 

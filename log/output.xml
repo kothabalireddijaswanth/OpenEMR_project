@@ -1,582 +1,471 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230201 10:04:46.378" rpa="false" schemaversion="3">
-<suite id="s1" name="Patient" source="C:\OPENEMR_PROJECT\caption projrct_1\2__patient_details\01__patient.robot">
-<test id="s1-t1" name="TC1" line="9">
-<kw name="Launch Browser and Navigate To Url" library="Common_Functionalities" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=${BROWSER_NAME}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230201 10:04:47.449" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20230201 10:04:47.449" endtime="20230201 10:04:49.193"/>
+<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230201 12:22:08.829" rpa="false" schemaversion="3">
+<suite id="s1" name="Udemy Project" source="C:\OPENEMR_PROJECT\caption_project_2\udemy_project.robot">
+<test id="s1-t1" name="TC1" line="5">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>remote_url=http://localhost:4723/wd/hub</arg>
+<arg>platformName=android</arg>
+<arg>deviceName=realme7i</arg>
+<arg>app=C:${/}Users${/}40032476${/}Downloads${/}udemy-9-1-0.apk</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" starttime="20230201 12:22:09.318" endtime="20230201 12:22:28.534"/>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230201 10:04:49.194" endtime="20230201 10:04:49.318"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<kw name="Set Appium Timeout" library="AppiumLibrary">
 <arg>30s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20230201 10:04:49.319" endtime="20230201 10:04:49.322"/>
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<status status="PASS" starttime="20230201 12:22:28.534" endtime="20230201 12:22:28.534"/>
 </kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230201 10:04:49.324" level="INFO">Opening url 'https://demo.openemr.io/b/openemr'</msg>
-<status status="PASS" starttime="20230201 10:04:49.323" endtime="20230201 10:04:59.808"/>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[@text='Sign In']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230201 12:22:31.293" level="INFO">xpath criteria: //android.widget.Button[@text='Sign In']
+xpath criteria: //android.widget.Button[@text='Sign In']
+xpath criteria: //android.widget.Button[@text='Sign In']
+xpath criteria: //android.widget.Button[@text='Sign In']
+xpath criteria: //android.widget.Button[@text='Sign In']
+xpath criteria: //android.widget.Button[@text='Sign In']</msg>
+<status status="PASS" starttime="20230201 12:22:28.534" endtime="20230201 12:22:31.293"/>
 </kw>
-<status status="PASS" starttime="20230201 10:04:47.449" endtime="20230201 10:04:59.809"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[@text='Sign In']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230201 12:22:31.293" level="INFO">Clicking element 'xpath=//android.widget.Button[@text='Sign In']'.</msg>
+<msg timestamp="20230201 12:22:31.455" level="INFO">xpath criteria: //android.widget.Button[@text='Sign In']</msg>
+<status status="PASS" starttime="20230201 12:22:31.293" endtime="20230201 12:22:31.469"/>
 </kw>
-<kw name="add valid patient tamplate">
-<arg>admin</arg>
-<arg>pass</arg>
-<arg>English (Indian)</arg>
-<arg>jaswanth</arg>
-<arg>kothabali</arg>
-<arg>reddi gari</arg>
-<arg>jaswanth</arg>
-<arg>2000-07-16 00:00:00</arg>
-<arg>Male</arg>
-<arg>jaswanth kothabali reddi gari jaswanth</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name=authUser</arg>
-<arg>${User}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230201 10:04:59.810" level="INFO">Typing text 'admin' into text field 'name=authUser'.</msg>
-<status status="PASS" starttime="20230201 10:04:59.810" endtime="20230201 10:04:59.925"/>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.TextView[@text='Sign in with email']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230201 12:22:32.733" level="INFO">xpath criteria: //android.widget.TextView[@text='Sign in with email']
+xpath criteria: //android.widget.TextView[@text='Sign in with email']</msg>
+<status status="PASS" starttime="20230201 12:22:31.469" endtime="20230201 12:22:32.733"/>
 </kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>name=clearPass</arg>
-<arg>${Pass}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20230201 10:04:59.926" level="INFO">Typing password into text field 'name=clearPass'.</msg>
-<msg timestamp="20230201 10:04:59.976" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20230201 10:05:00.051" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20230201 10:04:59.925" endtime="20230201 10:05:00.051"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.TextView[@text='Sign in with email']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230201 12:22:32.739" level="INFO">Clicking element 'xpath=//android.widget.TextView[@text='Sign in with email']'.</msg>
+<msg timestamp="20230201 12:22:32.860" level="INFO">xpath criteria: //android.widget.TextView[@text='Sign in with email']</msg>
+<status status="PASS" starttime="20230201 12:22:32.733" endtime="20230201 12:22:32.860"/>
 </kw>
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>name=languageChoice</arg>
-<arg>${languageChoice}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20230201 10:05:00.052" level="INFO">Selecting options from selection list 'name=languageChoice' by label English (Indian).</msg>
-<status status="PASS" starttime="20230201 10:05:00.051" endtime="20230201 10:05:00.149"/>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text='Email']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230201 12:22:33.070" level="INFO">xpath criteria: //android.widget.EditText[@text='Email']</msg>
+<status status="PASS" starttime="20230201 12:22:32.860" endtime="20230201 12:22:33.070"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>id=login-button</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230201 10:05:00.150" level="INFO">Clicking element 'id=login-button'.</msg>
-<status status="PASS" starttime="20230201 10:05:00.149" endtime="20230201 10:05:08.974"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text='Email']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230201 12:22:33.070" level="INFO">Clicking element 'xpath=//android.widget.EditText[@text='Email']'.</msg>
+<msg timestamp="20230201 12:22:34.126" level="INFO">xpath criteria: //android.widget.EditText[@text='Email']</msg>
+<status status="PASS" starttime="20230201 12:22:33.070" endtime="20230201 12:22:34.126"/>
 </kw>
-<kw name="Mouse Over" library="SeleniumLibrary">
-<arg>xpath=//div[@class='menuLabel px-1 dropdown-toggle oe-dropdown-toggle']</arg>
-<doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20230201 10:05:08.975" level="INFO">Simulating Mouse Over on element 'xpath=//div[@class='menuLabel px-1 dropdown-toggle oe-dropdown-toggle']'.</msg>
-<status status="PASS" starttime="20230201 10:05:08.975" endtime="20230201 10:05:09.279"/>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text='Email']</arg>
+<arg>jaswanthjaswanth2000@gmail.com</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20230201 12:22:34.126" level="INFO">Typing text 'jaswanthjaswanth2000@gmail.com' into text field 'xpath=//android.widget.EditText[@text='Email']'</msg>
+<msg timestamp="20230201 12:22:34.342" level="INFO">xpath criteria: //android.widget.EditText[@text='Email']</msg>
+<status status="PASS" starttime="20230201 12:22:34.126" endtime="20230201 12:22:34.342"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//div[text()='New/Search']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230201 10:05:09.279" level="INFO">Clicking element 'xpath=//div[text()='New/Search']'.</msg>
-<status status="PASS" starttime="20230201 10:05:09.279" endtime="20230201 10:05:09.379"/>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[@text='Next']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230201 12:22:34.476" level="INFO">xpath criteria: //android.widget.Button[@text='Next']</msg>
+<status status="PASS" starttime="20230201 12:22:34.342" endtime="20230201 12:22:34.476"/>
 </kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>xpath=//iframe[@name='pat']</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20230201 10:05:09.381" level="INFO">Selecting frame 'xpath=//iframe[@name='pat']'.</msg>
-<status status="PASS" starttime="20230201 10:05:09.380" endtime="20230201 10:05:11.982"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[@text='Next']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230201 12:22:34.476" level="INFO">Clicking element 'xpath=//android.widget.Button[@text='Next']'.</msg>
+<msg timestamp="20230201 12:22:34.814" level="INFO">xpath criteria: //android.widget.Button[@text='Next']</msg>
+<status status="PASS" starttime="20230201 12:22:34.476" endtime="20230201 12:22:34.814"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=form_fname</arg>
-<arg>${fname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230201 10:05:11.983" level="INFO">Typing text 'jaswanth' into text field 'id=form_fname'.</msg>
-<status status="PASS" starttime="20230201 10:05:11.982" endtime="20230201 10:05:12.222"/>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text='Password (8+ characters)']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230201 12:22:35.749" level="INFO">xpath criteria: //android.widget.EditText[@text='Password (8+ characters)']</msg>
+<status status="PASS" starttime="20230201 12:22:34.814" endtime="20230201 12:22:35.749"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=form_mname</arg>
-<arg>${mname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230201 10:05:12.223" level="INFO">Typing text 'kothabali' into text field 'id=form_mname'.</msg>
-<status status="PASS" starttime="20230201 10:05:12.222" endtime="20230201 10:05:12.445"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text='Password (8+ characters)']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230201 12:22:35.749" level="INFO">Clicking element 'xpath=//android.widget.EditText[@text='Password (8+ characters)']'.</msg>
+<msg timestamp="20230201 12:22:36.722" level="INFO">xpath criteria: //android.widget.EditText[@text='Password (8+ characters)']</msg>
+<status status="PASS" starttime="20230201 12:22:35.749" endtime="20230201 12:22:36.722"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=form_lname</arg>
-<arg>${lname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230201 10:05:12.447" level="INFO">Typing text 'reddi gari' into text field 'id=form_lname'.</msg>
-<status status="PASS" starttime="20230201 10:05:12.446" endtime="20230201 10:05:12.599"/>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text='Password (8+ characters)']</arg>
+<arg>Jassu@133</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20230201 12:22:36.735" level="INFO">Typing text 'Jassu@133' into text field 'xpath=//android.widget.EditText[@text='Password (8+ characters)']'</msg>
+<msg timestamp="20230201 12:22:37.939" level="INFO">xpath criteria: //android.widget.EditText[@text='Password (8+ characters)']</msg>
+<status status="PASS" starttime="20230201 12:22:36.722" endtime="20230201 12:22:37.939"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=form_suffix</arg>
-<arg>${suffix}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230201 10:05:12.602" level="INFO">Typing text 'jaswanth' into text field 'id=form_suffix'.</msg>
-<status status="PASS" starttime="20230201 10:05:12.601" endtime="20230201 10:05:12.744"/>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[@text='Sign In']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230201 12:22:38.593" level="INFO">xpath criteria: //android.widget.Button[@text='Sign In']</msg>
+<status status="PASS" starttime="20230201 12:22:37.939" endtime="20230201 12:22:38.593"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name=form_DOB</arg>
-<arg>${DOB}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230201 10:05:12.747" level="INFO">Typing text '2000-07-16 00:00:00' into text field 'name=form_DOB'.</msg>
-<status status="PASS" starttime="20230201 10:05:12.745" endtime="20230201 10:05:12.928"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[@text='Sign In']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230201 12:22:38.610" level="INFO">Clicking element 'xpath=//android.widget.Button[@text='Sign In']'.</msg>
+<msg timestamp="20230201 12:22:38.715" level="INFO">xpath criteria: //android.widget.Button[@text='Sign In']</msg>
+<status status="PASS" starttime="20230201 12:22:38.593" endtime="20230201 12:22:38.715"/>
 </kw>
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>name=form_sex</arg>
-<arg>${sex}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20230201 10:05:12.930" level="INFO">Selecting options from selection list 'name=form_sex' by label Male.</msg>
-<status status="PASS" starttime="20230201 10:05:12.929" endtime="20230201 10:05:13.125"/>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath=//android.widget.Button[@text='Skip']</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[@text='Skip']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230201 12:22:50.417" level="INFO">xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']
+xpath criteria: //android.widget.Button[@text='Skip']</msg>
+<status status="PASS" starttime="20230201 12:22:38.715" endtime="20230201 12:22:50.417"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>id=create</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230201 10:05:13.127" level="INFO">Clicking element 'id=create'.</msg>
-<status status="PASS" starttime="20230201 10:05:13.126" endtime="20230201 10:05:13.324"/>
+<status status="PASS" starttime="20230201 12:22:38.715" endtime="20230201 12:22:50.417"/>
 </kw>
-<kw name="Unselect Frame" library="SeleniumLibrary">
-<doc>Sets the main frame as the current frame.</doc>
-<status status="PASS" starttime="20230201 10:05:13.325" endtime="20230201 10:05:13.329"/>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Click Element</arg>
+<arg>xpath=//android.widget.Button[@text='Skip']</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[@text='Skip']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230201 12:22:50.417" level="INFO">Clicking element 'xpath=//android.widget.Button[@text='Skip']'.</msg>
+<msg timestamp="20230201 12:22:50.506" level="INFO">xpath criteria: //android.widget.Button[@text='Skip']</msg>
+<status status="PASS" starttime="20230201 12:22:50.417" endtime="20230201 12:22:50.506"/>
 </kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>xpath=//iframe[@id='modalframe']</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20230201 10:05:13.331" level="INFO">Selecting frame 'xpath=//iframe[@id='modalframe']'.</msg>
-<status status="PASS" starttime="20230201 10:05:13.330" endtime="20230201 10:05:13.862"/>
+<status status="PASS" starttime="20230201 12:22:50.417" endtime="20230201 12:22:50.508"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//input[@onclick='dlgclose("srcConfirmSave", false);']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230201 10:05:13.864" level="INFO">Clicking element 'xpath=//input[@onclick='dlgclose("srcConfirmSave", false);']'.</msg>
-<status status="PASS" starttime="20230201 10:05:13.863" endtime="20230201 10:05:13.987"/>
+<kw name="Get Matching Xpath Count" library="AppiumLibrary">
+<var>${count}</var>
+<arg>xpath=//android.widget.TextView[@text='IT &amp; Software']</arg>
+<doc>Returns number of elements matching ``xpath``</doc>
+<msg timestamp="20230201 12:22:50.697" level="INFO">xpath criteria: //android.widget.TextView[@text='IT &amp; Software']</msg>
+<msg timestamp="20230201 12:22:50.697" level="INFO">${count} = 0</msg>
+<status status="PASS" starttime="20230201 12:22:50.509" endtime="20230201 12:22:50.697"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>15s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230201 10:05:28.988" level="INFO">Slept 15 seconds</msg>
-<status status="PASS" starttime="20230201 10:05:13.987" endtime="20230201 10:05:28.988"/>
+<while condition="${count}==0">
+<iter>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>90</arg>
+<arg>75</arg>
+<arg>90</arg>
+<arg>25</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20230201 12:22:50.697" endtime="20230201 12:22:52.075"/>
 </kw>
-<kw name="Handle Alert" library="SeleniumLibrary">
-<var>${alert_text}</var>
-<arg>action=ACCEPT</arg>
-<doc>Handles the current alert and returns its message.</doc>
-<msg timestamp="20230201 10:05:28.989" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
-<msg timestamp="20230201 10:05:28.998" level="INFO">${alert_text} = New Due Clinical Reminders  Measurement: Weight Assessment: Tobacco  (See the Clinical Reminders widget for more details)</msg>
-<status status="PASS" starttime="20230201 10:05:28.988" endtime="20230201 10:05:28.999"/>
+<kw name="Get Matching Xpath Count" library="AppiumLibrary">
+<var>${count}</var>
+<arg>xpath=//android.widget.TextView[@text='IT &amp; Software']</arg>
+<doc>Returns number of elements matching ``xpath``</doc>
+<msg timestamp="20230201 12:22:52.880" level="INFO">xpath criteria: //android.widget.TextView[@text='IT &amp; Software']</msg>
+<msg timestamp="20230201 12:22:52.880" level="INFO">${count} = 0</msg>
+<status status="PASS" starttime="20230201 12:22:52.075" endtime="20230201 12:22:52.880"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${alert_text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230201 10:05:28.999" endtime="20230201 10:05:29.000"/>
+<status status="PASS" starttime="20230201 12:22:50.697" endtime="20230201 12:22:52.880"/>
+</iter>
+<iter>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>90</arg>
+<arg>75</arg>
+<arg>90</arg>
+<arg>25</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20230201 12:22:52.880" endtime="20230201 12:22:54.271"/>
 </kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>xpath=//iframe[@name='pat']</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20230201 10:05:29.002" level="INFO">Selecting frame 'xpath=//iframe[@name='pat']'.</msg>
-<status status="PASS" starttime="20230201 10:05:29.001" endtime="20230201 10:05:29.119"/>
+<kw name="Get Matching Xpath Count" library="AppiumLibrary">
+<var>${count}</var>
+<arg>xpath=//android.widget.TextView[@text='IT &amp; Software']</arg>
+<doc>Returns number of elements matching ``xpath``</doc>
+<msg timestamp="20230201 12:22:55.630" level="INFO">xpath criteria: //android.widget.TextView[@text='IT &amp; Software']</msg>
+<msg timestamp="20230201 12:22:55.630" level="INFO">${count} = 1</msg>
+<status status="PASS" starttime="20230201 12:22:54.271" endtime="20230201 12:22:55.630"/>
 </kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>xpath=//h2[contains(text(),'Medical Record Dashboard')]</arg>
-<arg>${expected_data}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20230201 10:05:29.159" level="INFO">Element 'xpath=//h2[contains(text(),'Medical Record Dashboard')]' contains text 'jaswanth kothabali reddi gari jaswanth'.</msg>
-<status status="PASS" starttime="20230201 10:05:29.120" endtime="20230201 10:05:29.160"/>
+<status status="PASS" starttime="20230201 12:22:52.880" endtime="20230201 12:22:55.630"/>
+</iter>
+<status status="PASS" starttime="20230201 12:22:50.697" endtime="20230201 12:22:55.630"/>
+</while>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.TextView[@text='IT &amp; Software']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230201 12:22:55.733" level="INFO">xpath criteria: //android.widget.TextView[@text='IT &amp; Software']</msg>
+<status status="PASS" starttime="20230201 12:22:55.630" endtime="20230201 12:22:55.733"/>
 </kw>
-<status status="PASS" starttime="20230201 10:04:59.809" endtime="20230201 10:05:29.161"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.TextView[@text='IT &amp; Software']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230201 12:22:55.733" level="INFO">Clicking element 'xpath=//android.widget.TextView[@text='IT &amp; Software']'.</msg>
+<msg timestamp="20230201 12:22:55.892" level="INFO">xpath criteria: //android.widget.TextView[@text='IT &amp; Software']</msg>
+<status status="PASS" starttime="20230201 12:22:55.733" endtime="20230201 12:22:55.892"/>
 </kw>
-<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230201 10:05:29.161" endtime="20230201 10:05:31.425"/>
+<kw name="Get Matching Xpath Count" library="AppiumLibrary">
+<var>${count}</var>
+<arg>xpath=//android.widget.TextView[@text='Hardware']</arg>
+<doc>Returns number of elements matching ``xpath``</doc>
+<msg timestamp="20230201 12:22:55.998" level="INFO">xpath criteria: //android.widget.TextView[@text='Hardware']</msg>
+<msg timestamp="20230201 12:22:55.998" level="INFO">${count} = 0</msg>
+<status status="PASS" starttime="20230201 12:22:55.892" endtime="20230201 12:22:55.998"/>
 </kw>
-<status status="PASS" starttime="20230201 10:04:47.449" endtime="20230201 10:05:31.425"/>
+<while condition="${count}==0">
+<iter>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>90</arg>
+<arg>75</arg>
+<arg>90</arg>
+<arg>25</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20230201 12:22:55.998" endtime="20230201 12:22:57.320"/>
+</kw>
+<kw name="Get Matching Xpath Count" library="AppiumLibrary">
+<var>${count}</var>
+<arg>xpath=//android.widget.TextView[@text='Hardware']</arg>
+<doc>Returns number of elements matching ``xpath``</doc>
+<msg timestamp="20230201 12:22:57.382" level="INFO">xpath criteria: //android.widget.TextView[@text='Hardware']</msg>
+<msg timestamp="20230201 12:22:57.382" level="INFO">${count} = 0</msg>
+<status status="PASS" starttime="20230201 12:22:57.320" endtime="20230201 12:22:57.382"/>
+</kw>
+<status status="PASS" starttime="20230201 12:22:55.998" endtime="20230201 12:22:57.382"/>
+</iter>
+<iter>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>90</arg>
+<arg>75</arg>
+<arg>90</arg>
+<arg>25</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20230201 12:22:57.382" endtime="20230201 12:22:58.699"/>
+</kw>
+<kw name="Get Matching Xpath Count" library="AppiumLibrary">
+<var>${count}</var>
+<arg>xpath=//android.widget.TextView[@text='Hardware']</arg>
+<doc>Returns number of elements matching ``xpath``</doc>
+<msg timestamp="20230201 12:22:58.770" level="INFO">xpath criteria: //android.widget.TextView[@text='Hardware']</msg>
+<msg timestamp="20230201 12:22:58.770" level="INFO">${count} = 0</msg>
+<status status="PASS" starttime="20230201 12:22:58.715" endtime="20230201 12:22:58.770"/>
+</kw>
+<status status="PASS" starttime="20230201 12:22:57.382" endtime="20230201 12:22:58.770"/>
+</iter>
+<iter>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>90</arg>
+<arg>75</arg>
+<arg>90</arg>
+<arg>25</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20230201 12:22:58.770" endtime="20230201 12:23:00.103"/>
+</kw>
+<kw name="Get Matching Xpath Count" library="AppiumLibrary">
+<var>${count}</var>
+<arg>xpath=//android.widget.TextView[@text='Hardware']</arg>
+<doc>Returns number of elements matching ``xpath``</doc>
+<msg timestamp="20230201 12:23:01.631" level="INFO">xpath criteria: //android.widget.TextView[@text='Hardware']</msg>
+<msg timestamp="20230201 12:23:01.631" level="INFO">${count} = 0</msg>
+<status status="PASS" starttime="20230201 12:23:00.103" endtime="20230201 12:23:01.631"/>
+</kw>
+<status status="PASS" starttime="20230201 12:22:58.770" endtime="20230201 12:23:01.631"/>
+</iter>
+<iter>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>90</arg>
+<arg>75</arg>
+<arg>90</arg>
+<arg>25</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20230201 12:23:01.631" endtime="20230201 12:23:02.967"/>
+</kw>
+<kw name="Get Matching Xpath Count" library="AppiumLibrary">
+<var>${count}</var>
+<arg>xpath=//android.widget.TextView[@text='Hardware']</arg>
+<doc>Returns number of elements matching ``xpath``</doc>
+<msg timestamp="20230201 12:23:03.798" level="INFO">xpath criteria: //android.widget.TextView[@text='Hardware']</msg>
+<msg timestamp="20230201 12:23:03.798" level="INFO">${count} = 0</msg>
+<status status="PASS" starttime="20230201 12:23:02.967" endtime="20230201 12:23:03.798"/>
+</kw>
+<status status="PASS" starttime="20230201 12:23:01.631" endtime="20230201 12:23:03.798"/>
+</iter>
+<iter>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>90</arg>
+<arg>75</arg>
+<arg>90</arg>
+<arg>25</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20230201 12:23:03.798" endtime="20230201 12:23:05.137"/>
+</kw>
+<kw name="Get Matching Xpath Count" library="AppiumLibrary">
+<var>${count}</var>
+<arg>xpath=//android.widget.TextView[@text='Hardware']</arg>
+<doc>Returns number of elements matching ``xpath``</doc>
+<msg timestamp="20230201 12:23:05.939" level="INFO">xpath criteria: //android.widget.TextView[@text='Hardware']</msg>
+<msg timestamp="20230201 12:23:05.939" level="INFO">${count} = 1</msg>
+<status status="PASS" starttime="20230201 12:23:05.137" endtime="20230201 12:23:05.939"/>
+</kw>
+<status status="PASS" starttime="20230201 12:23:03.798" endtime="20230201 12:23:05.939"/>
+</iter>
+<status status="PASS" starttime="20230201 12:22:55.998" endtime="20230201 12:23:05.939"/>
+</while>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.TextView[@text='Hardware']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230201 12:23:06.020" level="INFO">xpath criteria: //android.widget.TextView[@text='Hardware']</msg>
+<status status="PASS" starttime="20230201 12:23:05.939" endtime="20230201 12:23:06.020"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.TextView[@text='Hardware']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230201 12:23:06.020" level="INFO">Clicking element 'xpath=//android.widget.TextView[@text='Hardware']'.</msg>
+<msg timestamp="20230201 12:23:06.764" level="INFO">xpath criteria: //android.widget.TextView[@text='Hardware']</msg>
+<status status="PASS" starttime="20230201 12:23:06.020" endtime="20230201 12:23:06.764"/>
+</kw>
+<kw name="Get Matching Xpath Count" library="AppiumLibrary">
+<var>${count}</var>
+<arg>xpath=//android.widget.TextView[@text='Embedded Systems']</arg>
+<doc>Returns number of elements matching ``xpath``</doc>
+<msg timestamp="20230201 12:23:06.817" level="INFO">xpath criteria: //android.widget.TextView[@text='Embedded Systems']</msg>
+<msg timestamp="20230201 12:23:06.818" level="INFO">${count} = 0</msg>
+<status status="PASS" starttime="20230201 12:23:06.764" endtime="20230201 12:23:06.818"/>
+</kw>
+<while condition="${count}==0">
+<iter>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>90</arg>
+<arg>75</arg>
+<arg>90</arg>
+<arg>25</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20230201 12:23:06.818" endtime="20230201 12:23:08.157"/>
+</kw>
+<kw name="Get Matching Xpath Count" library="AppiumLibrary">
+<var>${count}</var>
+<arg>xpath=//android.widget.TextView[@text='Embedded Systems']</arg>
+<doc>Returns number of elements matching ``xpath``</doc>
+<msg timestamp="20230201 12:23:08.680" level="INFO">xpath criteria: //android.widget.TextView[@text='Embedded Systems']</msg>
+<msg timestamp="20230201 12:23:08.680" level="INFO">${count} = 0</msg>
+<status status="PASS" starttime="20230201 12:23:08.157" endtime="20230201 12:23:08.680"/>
+</kw>
+<status status="PASS" starttime="20230201 12:23:06.818" endtime="20230201 12:23:08.680"/>
+</iter>
+<iter>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>90</arg>
+<arg>75</arg>
+<arg>90</arg>
+<arg>25</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20230201 12:23:08.680" endtime="20230201 12:23:10.011"/>
+</kw>
+<kw name="Get Matching Xpath Count" library="AppiumLibrary">
+<var>${count}</var>
+<arg>xpath=//android.widget.TextView[@text='Embedded Systems']</arg>
+<doc>Returns number of elements matching ``xpath``</doc>
+<msg timestamp="20230201 12:23:10.894" level="INFO">xpath criteria: //android.widget.TextView[@text='Embedded Systems']</msg>
+<msg timestamp="20230201 12:23:10.894" level="INFO">${count} = 1</msg>
+<status status="PASS" starttime="20230201 12:23:10.011" endtime="20230201 12:23:10.894"/>
+</kw>
+<status status="PASS" starttime="20230201 12:23:08.680" endtime="20230201 12:23:10.894"/>
+</iter>
+<status status="PASS" starttime="20230201 12:23:06.818" endtime="20230201 12:23:10.894"/>
+</while>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.TextView[@text='Embedded Systems']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230201 12:23:10.960" level="INFO">xpath criteria: //android.widget.TextView[@text='Embedded Systems']</msg>
+<status status="PASS" starttime="20230201 12:23:10.894" endtime="20230201 12:23:10.960"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.TextView[@text='Embedded Systems']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230201 12:23:10.960" level="INFO">Clicking element 'xpath=//android.widget.TextView[@text='Embedded Systems']'.</msg>
+<msg timestamp="20230201 12:23:11.090" level="INFO">xpath criteria: //android.widget.TextView[@text='Embedded Systems']</msg>
+<status status="PASS" starttime="20230201 12:23:10.960" endtime="20230201 12:23:11.090"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=(//android.widget.ImageView[@resource-id='com.udemy.android:id/course_image'])[1]</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230201 12:23:13.367" level="INFO">xpath criteria: (//android.widget.ImageView[@resource-id='com.udemy.android:id/course_image'])[1]
+xpath criteria: (//android.widget.ImageView[@resource-id='com.udemy.android:id/course_image'])[1]
+xpath criteria: (//android.widget.ImageView[@resource-id='com.udemy.android:id/course_image'])[1]</msg>
+<status status="PASS" starttime="20230201 12:23:11.090" endtime="20230201 12:23:13.367"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=(//android.widget.ImageView[@resource-id='com.udemy.android:id/course_image'])[1]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230201 12:23:13.367" level="INFO">Clicking element 'xpath=(//android.widget.ImageView[@resource-id='com.udemy.android:id/course_image'])[1]'.</msg>
+<msg timestamp="20230201 12:23:16.643" level="INFO">xpath criteria: (//android.widget.ImageView[@resource-id='com.udemy.android:id/course_image'])[1]</msg>
+<status status="PASS" starttime="20230201 12:23:13.367" endtime="20230201 12:23:16.643"/>
+</kw>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>xpath=//android.widget.TextView[@resource-id='com.udemy.android:id/course_title']</arg>
+<arg>Mastering Microcontroller and Embedded Driver Development</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230201 12:23:16.643" level="INFO">Verifying element 'xpath=//android.widget.TextView[@resource-id='com.udemy.android:id/course_title']' contains text 'Mastering Microcontroller and Embedded Driver Development'.</msg>
+<msg timestamp="20230201 12:23:16.757" level="INFO">xpath criteria: //android.widget.TextView[@resource-id='com.udemy.android:id/course_title']</msg>
+<status status="PASS" starttime="20230201 12:23:16.643" endtime="20230201 12:23:16.757"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20230201 12:23:16.757" endtime="20230201 12:23:17.539"/>
+</kw>
+<status status="PASS" starttime="20230201 12:22:09.317" endtime="20230201 12:23:17.541"/>
 </test>
-<test id="s1-t2" name="TC1" line="9">
-<kw name="Launch Browser and Navigate To Url" library="Common_Functionalities" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=${BROWSER_NAME}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230201 10:05:31.425" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20230201 10:05:31.425" endtime="20230201 10:05:33.090"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230201 10:05:33.091" endtime="20230201 10:05:33.228"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>30s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20230201 10:05:33.229" endtime="20230201 10:05:33.232"/>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230201 10:05:33.233" level="INFO">Opening url 'https://demo.openemr.io/b/openemr'</msg>
-<status status="PASS" starttime="20230201 10:05:33.232" endtime="20230201 10:05:43.684"/>
-</kw>
-<status status="PASS" starttime="20230201 10:05:31.425" endtime="20230201 10:05:43.684"/>
-</kw>
-<kw name="add valid patient tamplate">
-<arg>admin</arg>
-<arg>pass</arg>
-<arg>English (Indian)</arg>
-<arg>revanth</arg>
-<arg>kumar</arg>
-<arg>reddy</arg>
-<arg>jaswanth</arg>
-<arg>2000-06-27 00:00:00</arg>
-<arg>Male</arg>
-<arg>revanth kumar reddy jaswanth</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name=authUser</arg>
-<arg>${User}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230201 10:05:43.687" level="INFO">Typing text 'admin' into text field 'name=authUser'.</msg>
-<status status="PASS" starttime="20230201 10:05:43.686" endtime="20230201 10:05:43.796"/>
-</kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>name=clearPass</arg>
-<arg>${Pass}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20230201 10:05:43.798" level="INFO">Typing password into text field 'name=clearPass'.</msg>
-<msg timestamp="20230201 10:05:43.858" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20230201 10:05:43.922" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20230201 10:05:43.797" endtime="20230201 10:05:43.923"/>
-</kw>
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>name=languageChoice</arg>
-<arg>${languageChoice}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20230201 10:05:43.925" level="INFO">Selecting options from selection list 'name=languageChoice' by label English (Indian).</msg>
-<status status="PASS" starttime="20230201 10:05:43.924" endtime="20230201 10:05:44.041"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>id=login-button</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230201 10:05:44.041" level="INFO">Clicking element 'id=login-button'.</msg>
-<status status="PASS" starttime="20230201 10:05:44.041" endtime="20230201 10:05:52.537"/>
-</kw>
-<kw name="Mouse Over" library="SeleniumLibrary">
-<arg>xpath=//div[@class='menuLabel px-1 dropdown-toggle oe-dropdown-toggle']</arg>
-<doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20230201 10:05:52.539" level="INFO">Simulating Mouse Over on element 'xpath=//div[@class='menuLabel px-1 dropdown-toggle oe-dropdown-toggle']'.</msg>
-<status status="PASS" starttime="20230201 10:05:52.538" endtime="20230201 10:05:52.842"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//div[text()='New/Search']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230201 10:05:52.842" level="INFO">Clicking element 'xpath=//div[text()='New/Search']'.</msg>
-<status status="PASS" starttime="20230201 10:05:52.842" endtime="20230201 10:05:52.930"/>
-</kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>xpath=//iframe[@name='pat']</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20230201 10:05:52.932" level="INFO">Selecting frame 'xpath=//iframe[@name='pat']'.</msg>
-<status status="PASS" starttime="20230201 10:05:52.931" endtime="20230201 10:05:55.817"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=form_fname</arg>
-<arg>${fname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230201 10:05:55.819" level="INFO">Typing text 'revanth' into text field 'id=form_fname'.</msg>
-<status status="PASS" starttime="20230201 10:05:55.817" endtime="20230201 10:05:56.062"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=form_mname</arg>
-<arg>${mname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230201 10:05:56.063" level="INFO">Typing text 'kumar' into text field 'id=form_mname'.</msg>
-<status status="PASS" starttime="20230201 10:05:56.062" endtime="20230201 10:05:56.268"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=form_lname</arg>
-<arg>${lname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230201 10:05:56.270" level="INFO">Typing text 'reddy' into text field 'id=form_lname'.</msg>
-<status status="PASS" starttime="20230201 10:05:56.269" endtime="20230201 10:05:56.399"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=form_suffix</arg>
-<arg>${suffix}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230201 10:05:56.400" level="INFO">Typing text 'jaswanth' into text field 'id=form_suffix'.</msg>
-<status status="PASS" starttime="20230201 10:05:56.400" endtime="20230201 10:05:56.542"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name=form_DOB</arg>
-<arg>${DOB}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230201 10:05:56.544" level="INFO">Typing text '2000-06-27 00:00:00' into text field 'name=form_DOB'.</msg>
-<status status="PASS" starttime="20230201 10:05:56.543" endtime="20230201 10:05:56.701"/>
-</kw>
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>name=form_sex</arg>
-<arg>${sex}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20230201 10:05:56.703" level="INFO">Selecting options from selection list 'name=form_sex' by label Male.</msg>
-<status status="PASS" starttime="20230201 10:05:56.701" endtime="20230201 10:05:56.892"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>id=create</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230201 10:05:56.895" level="INFO">Clicking element 'id=create'.</msg>
-<status status="PASS" starttime="20230201 10:05:56.893" endtime="20230201 10:05:57.102"/>
-</kw>
-<kw name="Unselect Frame" library="SeleniumLibrary">
-<doc>Sets the main frame as the current frame.</doc>
-<status status="PASS" starttime="20230201 10:05:57.103" endtime="20230201 10:05:57.109"/>
-</kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>xpath=//iframe[@id='modalframe']</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20230201 10:05:57.111" level="INFO">Selecting frame 'xpath=//iframe[@id='modalframe']'.</msg>
-<status status="PASS" starttime="20230201 10:05:57.109" endtime="20230201 10:05:57.608"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//input[@onclick='dlgclose("srcConfirmSave", false);']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230201 10:05:57.609" level="INFO">Clicking element 'xpath=//input[@onclick='dlgclose("srcConfirmSave", false);']'.</msg>
-<status status="PASS" starttime="20230201 10:05:57.608" endtime="20230201 10:05:57.729"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>15s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230201 10:06:12.731" level="INFO">Slept 15 seconds</msg>
-<status status="PASS" starttime="20230201 10:05:57.729" endtime="20230201 10:06:12.732"/>
-</kw>
-<kw name="Handle Alert" library="SeleniumLibrary">
-<var>${alert_text}</var>
-<arg>action=ACCEPT</arg>
-<doc>Handles the current alert and returns its message.</doc>
-<msg timestamp="20230201 10:06:12.733" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
-<msg timestamp="20230201 10:06:12.743" level="INFO">${alert_text} = New Due Clinical Reminders  Measurement: Weight Assessment: Tobacco  (See the Clinical Reminders widget for more details)</msg>
-<status status="PASS" starttime="20230201 10:06:12.732" endtime="20230201 10:06:12.743"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${alert_text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230201 10:06:12.744" endtime="20230201 10:06:12.745"/>
-</kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>xpath=//iframe[@name='pat']</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20230201 10:06:12.748" level="INFO">Selecting frame 'xpath=//iframe[@name='pat']'.</msg>
-<status status="PASS" starttime="20230201 10:06:12.746" endtime="20230201 10:06:12.832"/>
-</kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>xpath=//h2[contains(text(),'Medical Record Dashboard')]</arg>
-<arg>${expected_data}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20230201 10:06:12.883" level="INFO">Element 'xpath=//h2[contains(text(),'Medical Record Dashboard')]' contains text 'revanth kumar reddy jaswanth'.</msg>
-<status status="PASS" starttime="20230201 10:06:12.833" endtime="20230201 10:06:12.883"/>
-</kw>
-<status status="PASS" starttime="20230201 10:05:43.685" endtime="20230201 10:06:12.884"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230201 10:06:12.884" endtime="20230201 10:06:15.156"/>
-</kw>
-<status status="PASS" starttime="20230201 10:05:31.425" endtime="20230201 10:06:15.156"/>
-</test>
-<test id="s1-t3" name="TC1" line="9">
-<kw name="Launch Browser and Navigate To Url" library="Common_Functionalities" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=${BROWSER_NAME}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230201 10:06:15.156" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20230201 10:06:15.156" endtime="20230201 10:06:16.870"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230201 10:06:16.871" endtime="20230201 10:06:16.998"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>30s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20230201 10:06:16.999" endtime="20230201 10:06:17.003"/>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230201 10:06:17.007" level="INFO">Opening url 'https://demo.openemr.io/b/openemr'</msg>
-<status status="PASS" starttime="20230201 10:06:17.004" endtime="20230201 10:06:26.200"/>
-</kw>
-<status status="PASS" starttime="20230201 10:06:15.156" endtime="20230201 10:06:26.201"/>
-</kw>
-<kw name="add valid patient tamplate">
-<arg>admin</arg>
-<arg>pass</arg>
-<arg>English (Indian)</arg>
-<arg>lucky</arg>
-<arg>levaku</arg>
-<arg>reddy</arg>
-<arg>jaswanth</arg>
-<arg>1999-12-18 00:00:00</arg>
-<arg>Male</arg>
-<arg>lucky levaku reddy jaswanth</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name=authUser</arg>
-<arg>${User}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230201 10:06:26.202" level="INFO">Typing text 'admin' into text field 'name=authUser'.</msg>
-<status status="PASS" starttime="20230201 10:06:26.202" endtime="20230201 10:06:26.305"/>
-</kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>name=clearPass</arg>
-<arg>${Pass}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20230201 10:06:26.306" level="INFO">Typing password into text field 'name=clearPass'.</msg>
-<msg timestamp="20230201 10:06:26.363" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20230201 10:06:26.438" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20230201 10:06:26.305" endtime="20230201 10:06:26.439"/>
-</kw>
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>name=languageChoice</arg>
-<arg>${languageChoice}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20230201 10:06:26.440" level="INFO">Selecting options from selection list 'name=languageChoice' by label English (Indian).</msg>
-<status status="PASS" starttime="20230201 10:06:26.439" endtime="20230201 10:06:26.578"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>id=login-button</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230201 10:06:26.578" level="INFO">Clicking element 'id=login-button'.</msg>
-<status status="PASS" starttime="20230201 10:06:26.578" endtime="20230201 10:06:32.664"/>
-</kw>
-<kw name="Mouse Over" library="SeleniumLibrary">
-<arg>xpath=//div[@class='menuLabel px-1 dropdown-toggle oe-dropdown-toggle']</arg>
-<doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20230201 10:06:32.666" level="INFO">Simulating Mouse Over on element 'xpath=//div[@class='menuLabel px-1 dropdown-toggle oe-dropdown-toggle']'.</msg>
-<status status="PASS" starttime="20230201 10:06:32.664" endtime="20230201 10:06:32.973"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//div[text()='New/Search']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230201 10:06:32.973" level="INFO">Clicking element 'xpath=//div[text()='New/Search']'.</msg>
-<status status="PASS" starttime="20230201 10:06:32.973" endtime="20230201 10:06:33.062"/>
-</kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>xpath=//iframe[@name='pat']</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20230201 10:06:33.064" level="INFO">Selecting frame 'xpath=//iframe[@name='pat']'.</msg>
-<status status="PASS" starttime="20230201 10:06:33.063" endtime="20230201 10:06:35.174"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=form_fname</arg>
-<arg>${fname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230201 10:06:35.175" level="INFO">Typing text 'lucky' into text field 'id=form_fname'.</msg>
-<status status="PASS" starttime="20230201 10:06:35.174" endtime="20230201 10:06:35.377"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=form_mname</arg>
-<arg>${mname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230201 10:06:35.378" level="INFO">Typing text 'levaku' into text field 'id=form_mname'.</msg>
-<status status="PASS" starttime="20230201 10:06:35.377" endtime="20230201 10:06:35.598"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=form_lname</arg>
-<arg>${lname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230201 10:06:35.599" level="INFO">Typing text 'reddy' into text field 'id=form_lname'.</msg>
-<status status="PASS" starttime="20230201 10:06:35.598" endtime="20230201 10:06:35.748"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=form_suffix</arg>
-<arg>${suffix}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230201 10:06:35.749" level="INFO">Typing text 'jaswanth' into text field 'id=form_suffix'.</msg>
-<status status="PASS" starttime="20230201 10:06:35.748" endtime="20230201 10:06:35.882"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name=form_DOB</arg>
-<arg>${DOB}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230201 10:06:35.883" level="INFO">Typing text '1999-12-18 00:00:00' into text field 'name=form_DOB'.</msg>
-<status status="PASS" starttime="20230201 10:06:35.882" endtime="20230201 10:06:36.037"/>
-</kw>
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>name=form_sex</arg>
-<arg>${sex}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20230201 10:06:36.039" level="INFO">Selecting options from selection list 'name=form_sex' by label Male.</msg>
-<status status="PASS" starttime="20230201 10:06:36.038" endtime="20230201 10:06:36.225"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>id=create</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230201 10:06:36.227" level="INFO">Clicking element 'id=create'.</msg>
-<status status="PASS" starttime="20230201 10:06:36.226" endtime="20230201 10:06:36.406"/>
-</kw>
-<kw name="Unselect Frame" library="SeleniumLibrary">
-<doc>Sets the main frame as the current frame.</doc>
-<status status="PASS" starttime="20230201 10:06:36.406" endtime="20230201 10:06:36.410"/>
-</kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>xpath=//iframe[@id='modalframe']</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20230201 10:06:36.411" level="INFO">Selecting frame 'xpath=//iframe[@id='modalframe']'.</msg>
-<status status="PASS" starttime="20230201 10:06:36.410" endtime="20230201 10:06:36.964"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//input[@onclick='dlgclose("srcConfirmSave", false);']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230201 10:06:36.966" level="INFO">Clicking element 'xpath=//input[@onclick='dlgclose("srcConfirmSave", false);']'.</msg>
-<status status="PASS" starttime="20230201 10:06:36.964" endtime="20230201 10:06:37.095"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>15s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230201 10:06:52.097" level="INFO">Slept 15 seconds</msg>
-<status status="PASS" starttime="20230201 10:06:37.095" endtime="20230201 10:06:52.097"/>
-</kw>
-<kw name="Handle Alert" library="SeleniumLibrary">
-<var>${alert_text}</var>
-<arg>action=ACCEPT</arg>
-<doc>Handles the current alert and returns its message.</doc>
-<msg timestamp="20230201 10:06:52.098" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
-<msg timestamp="20230201 10:06:52.106" level="INFO">${alert_text} = New Due Clinical Reminders  Measurement: Weight Assessment: Tobacco  (See the Clinical Reminders widget for more details)</msg>
-<status status="PASS" starttime="20230201 10:06:52.097" endtime="20230201 10:06:52.107"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${alert_text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230201 10:06:52.107" endtime="20230201 10:06:52.107"/>
-</kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>xpath=//iframe[@name='pat']</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20230201 10:06:52.109" level="INFO">Selecting frame 'xpath=//iframe[@name='pat']'.</msg>
-<status status="PASS" starttime="20230201 10:06:52.108" endtime="20230201 10:06:52.204"/>
-</kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>xpath=//h2[contains(text(),'Medical Record Dashboard')]</arg>
-<arg>${expected_data}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20230201 10:06:52.254" level="INFO">Element 'xpath=//h2[contains(text(),'Medical Record Dashboard')]' contains text 'lucky levaku reddy jaswanth'.</msg>
-<status status="PASS" starttime="20230201 10:06:52.204" endtime="20230201 10:06:52.254"/>
-</kw>
-<status status="PASS" starttime="20230201 10:06:26.201" endtime="20230201 10:06:52.254"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230201 10:06:52.255" endtime="20230201 10:06:54.535"/>
-</kw>
-<status status="PASS" starttime="20230201 10:06:15.156" endtime="20230201 10:06:54.535"/>
-</test>
-<doc>This file contains test cases for add valid patient</doc>
-<status status="PASS" starttime="20230201 10:04:46.394" endtime="20230201 10:06:54.535"/>
+<status status="PASS" starttime="20230201 12:22:08.840" endtime="20230201 12:23:17.541"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="3" fail="0" skip="0" id="s1" name="Patient">Patient</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Udemy Project">Udemy Project</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20230201 10:05:31.425" level="WARN">Multiple tests with name 'TC1' executed in suite 'Patient'.</msg>
-<msg timestamp="20230201 10:06:15.156" level="WARN">Multiple tests with name 'TC1' executed in suite 'Patient'.</msg>
 </errors>
 </robot>
