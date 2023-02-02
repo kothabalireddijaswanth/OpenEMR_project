@@ -17,7 +17,8 @@ add valid patient tamplate
       Input Password    name=clearPass    ${Pass}
       Select From List By Label    name=languageChoice        ${languageChoice}
       Click Element    id=login-button
-      Mouse Over    xpath=//div[@class='menuLabel px-1 dropdown-toggle oe-dropdown-toggle']
+      #Mouse Over    xpath=//div[@class='menuLabel px-1 dropdown-toggle oe-dropdown-toggle']
+      Click Element    xpath=//div[text()='Patient']
       Click Element    xpath=//div[text()='New/Search']
       Select Frame    xpath=//iframe[@name='pat']
       Input Text    id=form_fname    ${fname}
